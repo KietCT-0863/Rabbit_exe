@@ -9,6 +9,7 @@ import { AppSidebar } from "@/components/AppSidebar";
 import { Tutorial } from "@/components/Tutorial";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AIAssistant } from "@/components/AI/AIAssistant";
 
 import { supabase } from "@/integrations/supabase/client";
 import Index from "./pages/Index";
@@ -35,6 +36,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => (
         <div className="flex-1 overflow-auto">
           {children}
         </div>
+        <AIAssistant />
       </main>
     </div>
   </SidebarProvider>
@@ -86,10 +88,10 @@ const App = () => {
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
-          
+
         </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+      </TooltipProvider>
+    </QueryClientProvider>
   );
 };
 
